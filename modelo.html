@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>tabuada(1 ao 10), pesquisa em vetores ou pedidos em uma lanchonete (ou todos de uma vez)</h1>
+
+
+    <span id="item1"></span>
+    <span id="item2"></span>
+    <span id="item3"></span>
+
+    <span id="final"></span>
+    <script>
+        let search = 1;
+        let search2 = 1;
+        let produto = -1;
+        let pedido = "";
+        let tabuada = "";
+        let pesquisa = "";
+        let pedidofinal = "";
+        let resul;
+        let conta;
+
+        const mistoQuente= 3;
+        const cafe = 2;
+        const marmita = 5;
+
+        let vetor = ["gow ragnarok $300,00", "gow 2018 $150,00", "assassin's creed valhalla $140,00", ]
+
+        
+
+        while (search != 0) {
+
+            search = prompt("digite para visualizar:  \r1 - tabuada(1 ao 10) \r2 - vetor/array jogos  \r3 - pedidos em uma lanchonete \r\rDigite (0) para sair ou finalizar!!!")
+
+            if (search == 1) {
+                  
+                for (let i = 1; i <= 10; i++) {
+
+                    for (let t = 1; t <= 10; t++) {
+
+                        tabuada += i + " x " + t + " = " + i * t + "</br>";
+
+                    }
+                }
+            }
+
+
+            if (search == 2) {
+
+
+                while (search2 != 0) {
+
+                    search2 = prompt("códigos de produto \rdigite 1 para ver os produtos e 0 para sair/finalizar")
+
+                    if (search2 != 0) {
+
+                        pesquisa = prompt("digite código do produto \r1- gow ragnarok \r2- gow 2018 \r3- assassin's creed")
+
+                        if (pesquisa == 1 ) {
+
+                            document.getElementById("item1").innerHTML = vetor[0] + "</br>" + "</br>";
+                            
+                        }
+
+                        if (pesquisa == 2) {
+                            
+                            document.getElementById("item2").innerHTML = vetor[1] + "</br>" + "</br>";
+                        }
+
+                        if (pesquisa == 3) {
+                            
+                            document.getElementById("item3").innerHTML = vetor[2] + "</br>" + "</br>";
+                        }
+                    }
+                }
+
+            }
+
+
+            if (search == 3) {
+
+                while (produto != 0) {
+                    
+                    produto = prompt("qual será seu pedido? \r1- misto quente \r2- café \r3- marmita(feijoada) \rDigite (0) para sair ou finalizar")
+
+                    if (produto == 1) {
+
+                        pedido = prompt("quantos misto quente deseja?")
+
+                        conta = mistoQuente * pedido;
+
+                        pedidofinal += pedido + " mistos quentes são $" + conta + "</br>";
+                    }
+
+                    if (produto == 2) {
+                        
+                        pedido = prompt("quantos cafe(s) deseja?")
+                        
+                        conta = cafe * pedido;
+
+                        pedidofinal += pedido + " cafe(s) são $" + conta + "</br>";
+
+                    }
+
+                    if (produto == 3) {
+                        
+                        pedido = prompt("quantas marmitas deseja?")
+
+                        conta = marmita * pedido;
+
+                        pedidofinal += pedido + " marmitas(feijoada) são $" + conta + "</br>";
+                    }
+                    
+                }
+            }
+
+        }
+
+        
+
+        resul = pedidofinal + "</br>" + tabuada
+
+        document.getElementById("final").innerHTML = resul
+
+    </script>
+
+</body>
+
+</html>
